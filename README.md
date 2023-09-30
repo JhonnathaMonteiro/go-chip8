@@ -42,6 +42,24 @@ Memory Map:
 +---------------+= 0x000 (0) Start of Chip-8 RAM
 ## CHIP-8 instructions
 
+## Display
+
+The original implementation of the Chip-8 language used a 64x32-pixel monochrome display.
+
+## Keyboard layout mapping
+
+|1|2|3|C|
+|4|5|6|D|
+|7|8|9|E|
+|A|0|B|F|
+
+into
+
+|1|2|3|4|
+|Q|W|E|R|
+|A|S|D|F|
+|Z|X|C|V|
+
 ## References
 
 - [Cowgod's](http://devernay.free.fr/hacks/chip8/C8TECH10.HTM)
@@ -50,4 +68,10 @@ Memory Map:
 ## TODO
 
 [x] read rom
-[] learn sdl
+[x] learn sdl
+    [x] keyboard
+    [x] screen
+[] Room loop
+    [] how to set frequency
+[] opcodes
+
