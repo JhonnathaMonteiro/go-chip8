@@ -321,15 +321,6 @@ func (vm *VM) parseOpcode() bool {
 		// Sprites are XORed onto the existing screen. If this causes any pixels to be erased, VF is set to 1, otherwise it is set to 0.
 		// If the sprite is positioned so part of it is outside the coordinates of the display, it wraps around to the opposite side of the screen.
 		// See instruction 8xy3 for more information on XOR, and section 2.4, Display, for more information on the Chip-8 screen and sprites.
-		vm.drawflag = true
-		vx := vm.V[vm.opcode&0x0F00] % 64
-		vy := vm.V[vm.opcode&0x00F0] % 32
-		n := vm.opcode & 0x000F
-		vm.V[0xF] = 0
-		for i := uint16(0); i < n; i++ {
-			currentByte := vm.memory[vm.I+i]
-			// TOOD: i need to understand better the concept of sprites and how to draw them
-		}
 	case 0xE000:
 		switch 0x00FF & vm.opcode {
 		case 0x009E:
